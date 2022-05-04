@@ -6,13 +6,13 @@ const moment = require('moment');
 
 const { loginValidation, registerValidation } = require('../services/validation');
 
-const gswu_regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@g.swu.ac.th$/
+const gswu_regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 exports.register = async (req,res) => {
     const { error } = registerValidation(req.body);
     if (error) return res.status(200).json({result: 'nOK', message: error.details[0].message, data: {}});
 
-    if (!gswu_regex.test(req.body.email)) return res.status(200).json({result: 'nOK', message: 'Please use g.swu.ac.th email domain', data: {}});
+    if (!gswu_regex.test(req.body.email)) return res.status(200).json({result: 'nOK', message: 'Email not valid', data: {}});
 
     const usernameExist = await Users.findOne({username: req.body.username});
     if (usernameExist) return res.status(200).json({result: 'nOK', message: 'Username already exists', data: {}});
