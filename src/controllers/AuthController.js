@@ -1,7 +1,5 @@
 const Users = require('../models/user_schema');
 const bcrypt = require('bcryptjs');
-const Files = require('../models/file_schema');
-const Otps = require('../models/otp_schema');
 
 const jwt = require('../jwt');
 const moment = require('moment');

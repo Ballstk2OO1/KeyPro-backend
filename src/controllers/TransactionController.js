@@ -5,7 +5,7 @@ const moment = require('moment');
 
 const { getAllData } = require('../services/utilities');
 
-const { transactionValidation } = require('../services/validation');
+const { transactionValidation, transactionGetValidation } = require('../services/validation');
 
 exports.getAll = async (req,res) => {
 

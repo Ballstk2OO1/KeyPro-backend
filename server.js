@@ -4,7 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 app.use(helmet());
-// const generator = require('generate-password');
+
 const corsOptions = {
   exposedHeaders: 'Authorization',
 };
