@@ -5,9 +5,9 @@ const switchCache = new NodeCache({ stdTTL: 604800 }) //7วัน
 
 const getAllData = async () => {
 
-    if (switchCache.has('switch')) {
-        return switchCache.get('switch')
-    }
+    // if (switchCache.has('switch')) {
+    //     return switchCache.get('switch')
+    // }
 
     try {
         const data = await Switches.find()
