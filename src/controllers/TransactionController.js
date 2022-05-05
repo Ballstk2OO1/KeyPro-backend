@@ -13,7 +13,7 @@ exports.getAll = async (req,res) => {
     if (switchData === '500') return res.status(500).json({result: 'Internal Server Error', message: '', data: {}});
     
     const formData = {
-        switch: switchData
+        switches: switchData
     }
     
     res.status(200).json({result: 'OK', message: 'success get form data', data: formData});
