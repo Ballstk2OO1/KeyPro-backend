@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use('/public/img', express.static(__dirname + '/public/img'));
+app.use('/public/image', express.static(__dirname + '/public/image'));
 app.use('/api', require('./src/middlewares/api'));
 
 const port = process.env.PORT || 8080;
