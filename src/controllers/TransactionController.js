@@ -96,9 +96,7 @@ exports.get = async (req,res) => {
             id: data._id,
             item: data.item,
             total: data.total,
-            owner: {
-                name: `${user_data.name.firstname} ${user_data.name.lastname}`
-            },
+            owner_name: `${user_data.name.firstname} ${user_data.name.lastname}`,
             created: data.created
         }        
 
